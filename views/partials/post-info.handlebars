@@ -1,11 +1,10 @@
 <div class="row container">
     <div class="col s12 m5 l12">
-        <div class="card-panel">
-            <div class="card-header">
-                <h4><a class="link" href="/post/{{id}}">{{title}}</a></h4>
-                <p>Posted by {{user.username}} on {{format_date created_at}}</p>
-            </div>
-            <p class="card-body">{{content}}</p>
+        <div class="card-header">
+            <h4><a class="link" href="/post/{{id}}">{{title}}</a></h4>
+            <p>Posted by {{user.username}} on {{format_date created_at}}</p>
         </div>
+        <p class="card-body">{{content}}</p>
+        <div class="divider"></div>
     </div>
 </div>

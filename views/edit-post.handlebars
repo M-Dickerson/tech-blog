@@ -9,9 +9,9 @@
 
                 <label class="form-label" for="content">Content</label>
                 <input name="content" type="text" value="{{post.content}}" class="form-input" />
-
-                <button type="submit" class="btn">Update Post</button>
-                <button type="button" class="delete-post-btn btn">Delete Post</button>
+                {{!-- update and delete buttons --}}
+                <button class="btn waves-effect waves-light" type="submit" name="action">Update Post</button>
+                <a class="waves-effect waves-light delete-post-btn btn" type="submit">Delete Post</a>
             </form>
         </div>
     </div>

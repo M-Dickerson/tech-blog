@@ -1,5 +1,5 @@
 * {
-    font-family: 'Quicksand', sans-serif;;
+    font-family: 'Quicksand', sans-serif;
 }
 /* navbar */
 .nav-wrapper {
@@ -8,4 +8,13 @@
 /* cards */
 .card-panel {
     margin-top: 3%;
+}
+a {
+    color: #9c162e;
+}
+.btn {
+    background-color: #9c162e;
+}
+.btn:hover {
+    background-color: #1c162e;
 }
