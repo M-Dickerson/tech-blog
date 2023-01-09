@@ -1,27 +1,21 @@
-const express = require('express');
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
 const path = require('path');
-
-// helper function
-const helpers = require('./utils/helpers');
-require("dotenv").config();
-
-// handlebars
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({helpers});
-
-// session connection to sequelize database
+const express = require('express');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const hbs = exphbs.create({helpers});
 
 const sess = {
   secret: process.env.SECRET,
-  cookie: {maxAge: 36000},
+  cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -32,7 +26,7 @@ const sess = {
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // set Handlebars as the default template engine
 app.engine('handlebars', hbs.engine);

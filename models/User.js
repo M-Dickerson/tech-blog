@@ -21,13 +21,11 @@ User.init(
     username: {
         type: DataTypes.STRING,
         allowNull:false,
-        unique: true,
     },
     password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            // this means the password must be at least four characters long
             len: [4],
         }
     }
@@ -39,10 +37,6 @@ User.init(
             return newUserData;
             
         },
-        async beforeUpdate(updatedUserData) {
-            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-            return updatedUserData;
-        }
     },
     sequelize,
     timestamps: false,

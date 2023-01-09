@@ -13,8 +13,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
@@ -172,8 +170,5 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-
-
 
 module.exports = router;

@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const {Post, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -42,7 +41,6 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
-
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
@@ -82,7 +80,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
           res.status(500).json(err);
         });
 })
-
 
 // redirecting users to sign in page once they sign up
 router.get('/new', (req, res) => {
