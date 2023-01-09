@@ -1,7 +1,13 @@
-<article class="post">
+<div class="row container">
+    <div class="col s12 m5 l12">
+        <div class="card-panel">
+            <article class="post">
 
-    {{#each posts as |post| }}
-    {{> post-info post}}
-    {{/each}}
+                {{#each posts as |post| }}
+                {{> post-info post}}
+                {{/each}}
 
-</article>
+            </article>
+        </div>
+    </div>
+</div>

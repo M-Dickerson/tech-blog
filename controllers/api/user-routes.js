@@ -3,7 +3,6 @@ const { User, Post, Comment } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
-    // access our user model and run .findAll() method -- similar to SELECT * FROM users;
     User.findAll({
         attributes: { exclude: ['[password']}
     })
@@ -133,7 +132,6 @@ router.post('/logout', (req, res) => {
 
 // PUT /api/users/1 - similar to UPDATE 
 router.put('/:id', (req, res) => {
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
 
     User.update(req.body, {
         individualHooks: true,

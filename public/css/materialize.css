@@ -1,6 +1,11 @@
+* {
+    font-family: 'Quicksand', sans-serif;;
+}
+/* navbar */
 .nav-wrapper {
     background-color: #3c162e;
 }
+/* cards */
 .card-panel {
     margin-top: 3%;
 }
